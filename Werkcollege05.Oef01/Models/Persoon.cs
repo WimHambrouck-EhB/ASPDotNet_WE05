@@ -19,14 +19,17 @@ namespace Werkcollege05.Oef01.Models
         [Compare(nameof(Wachtwoord))]
         public string WachtwoordControle { get; set; }
         
-        [DataType(DataType.EmailAddress)]
         [EmailAddress]
         public string Email { get; set; }
         
         [Range(0, 150)]
         public int Leeftijd { get; set; }
         
-        [FavorietSpel]
+        //[FavorietSpel]
+
+        [Compare(nameof(game))]
         public string FavorietSpel { get; set; }
+
+        private const string game = "test";
     }
 }
