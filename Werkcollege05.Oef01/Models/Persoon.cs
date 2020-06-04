@@ -18,18 +18,16 @@ namespace Werkcollege05.Oef01.Models
         [DataType(DataType.Password)]
         [Compare(nameof(Wachtwoord))]
         public string WachtwoordControle { get; set; }
-        
+
         [EmailAddress]
         public string Email { get; set; }
-        
+
         [Range(0, 150)]
         public int Leeftijd { get; set; }
-        
-        //[FavorietSpel]
 
-        [Compare(nameof(game))]
+        [Compare(nameof(Spel))]
         public string FavorietSpel { get; set; }
 
-        private const string game = "test";
+        public string Spel => "The Curse of Monkey Island";
     }
 }
