@@ -19,6 +19,7 @@ namespace Werkcollege05.Oef01.Models
         [Compare(nameof(Wachtwoord))]
         public string WachtwoordControle { get; set; }
 
+        // [DataType(DataType.EmailAddress)] gaat ook, maar zorgt enkel voor client-side validatie, omdat DataType louter het type attribuut van het gegenereerde html element zal bepalen
         [EmailAddress]
         public string Email { get; set; }
 
