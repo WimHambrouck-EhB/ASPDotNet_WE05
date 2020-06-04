@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,7 +9,6 @@ namespace Werkcollege05.Oef01.Models
 {
     public class Persoon
     {
-        public int ID { get; set; }
         [Required]
         public string Naam { get; set; }
 
@@ -25,9 +25,7 @@ namespace Werkcollege05.Oef01.Models
         [Range(0, 150)]
         public int Leeftijd { get; set; }
 
-        [Compare(nameof(Spel))]
+        [RegularExpression("The Curse of Monkey Island")]
         public string FavorietSpel { get; set; }
-
-        public string Spel => "The Curse of Monkey Island";
     }
 }
