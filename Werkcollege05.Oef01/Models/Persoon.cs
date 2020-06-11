@@ -21,6 +21,7 @@ namespace Werkcollege05.Oef01.Models
         [Range(0, 150)]
         public int Leeftijd { get; set; }
 
+        [Display(Name = "Favoriet spel")]
         [RegularExpression("The Curse of Monkey Island")]
         public string FavorietSpel { get; set; }
     }
