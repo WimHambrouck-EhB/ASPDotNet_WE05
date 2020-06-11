@@ -10,8 +10,8 @@ namespace Werkcollege05.Oef01.Models
         [DataType(DataType.Password)]
         public string Wachtwoord { get; set; }
 
-        [DataType(DataType.Password)]
-        [Compare(nameof(Wachtwoord))]
+        [DataType(DataType.Password), Display(Name = "Herhaal wachtwoord")]
+        [Compare(nameof(Wachtwoord), ErrorMessage = "Wachtwoorden komen niet overeen.")]
         public string WachtwoordControle { get; set; }
 
         // [DataType(DataType.EmailAddress)] gaat ook, maar zorgt enkel voor client-side validatie, omdat DataType louter het type attribuut van het gegenereerde html element zal bepalen
