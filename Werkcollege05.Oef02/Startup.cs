@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Werkcollege05.Oef02.Data;
 
 namespace Werkcollege05.Oef02
 {
@@ -33,6 +35,9 @@ namespace Werkcollege05.Oef02
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<Werkcollege05Oef02Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Werkcollege05Oef02Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
